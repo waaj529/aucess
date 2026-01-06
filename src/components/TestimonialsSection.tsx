@@ -5,8 +5,8 @@ const testimonials: Testimonial[] = [
   {
     text: "Working with this team transformed our online presence completely. Their attention to detail and creative approach exceeded all our expectations.",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
-    name: "Ethan Clark",
-    role: "Co-Founder, InnovateX",
+    name: "Sohail",
+    role: "CEO, Northlink",
   },
   {
     text: "App development can be tricky, but they made it feel effortless. Their team built a robust, intuitive app that our users love.",
@@ -23,14 +23,14 @@ const testimonials: Testimonial[] = [
   {
     text: "Their SEO strategy completely transformed our visibility. We went from page 10 to page 1 in just three months.",
     image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Marcus Chen",
-    role: "Marketing Director",
+    name: "Bernard",
+    role: "Engineer, Greeninfina",
   },
   {
     text: "Creating content that converts was always a challenge for us—until we partnered with them. Their content strategy doubled our newsletter sign-ups.",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
-    name: "David Harper",
-    role: "Content Manager",
+    name: "Bruno Shelfie",
+    role: "CEO, Inspectana",
   },
   {
     text: "The e-commerce platform they built for us is incredibly fast and user-friendly. Our conversion rates have never been better.",
@@ -41,8 +41,8 @@ const testimonials: Testimonial[] = [
   {
     text: "Their UX design transformed our complex product into something our customers actually enjoy using. Game-changer for our business.",
     image: "https://randomuser.me/api/portraits/men/7.jpg",
-    name: "James Wilson",
-    role: "Product Manager",
+    name: "Yasir",
+    role: "SEO, Submit14 Adventure",
   },
   {
     text: "From concept to launch, they delivered beyond expectations. The website drives 3x more leads than our previous one.",
@@ -69,15 +69,15 @@ const TestimonialsSection = () => {
         {/* Two Column Layout aligned to 30%/70% grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-border">
           {/* Left side - Label (30%) */}
-          <div className="relative z-20 flex items-center gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 pt-12">
-            <MessageSquare className="w-5 h-5 text-primary" />
-            <span className="text-primary font-medium tracking-wide uppercase text-sm">
+          <div className="relative z-20 flex items-start gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 pt-12">
+            <MessageSquare className="w-5 h-5 text-[#ff5757]" />
+            <span className="text-[#ff5757] font-bold tracking-wide uppercase text-sm">
               Testimonial
             </span>
           </div>
 
           {/* Right side - Content (70%) */}
-          <div className="relative z-20 pl-4 lg:pl-8 pt-12">
+          <div className="relative z-20 pl-4 lg:pl-8 pr-4 lg:pr-8 pt-12">
             {/* Heading & Description */}
             <div className="mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-6">
@@ -91,7 +91,7 @@ const TestimonialsSection = () => {
             {/* Testimonial Columns - Two columns */}
             <div className="flex gap-6 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] max-h-[600px]">
               <TestimonialsColumn testimonials={firstColumn} duration={18} className="flex-1" />
-              <TestimonialsColumn testimonials={secondColumn} duration={22} className="flex-1 hidden sm:block" />
+              <TestimonialsColumn testimonials={secondColumn} duration={22} className="flex-1 hidden sm:block" reverse />
             </div>
           </div>
         </div>

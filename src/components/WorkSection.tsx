@@ -234,8 +234,8 @@ const WorkSection = () => {
           <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-border">
             {/* Left side - Label (30%) */}
             <div className="relative z-20 lg:row-span-2 flex items-start gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 pt-12">
-              <Monitor className="w-5 h-5 text-primary" />
-              <span className="text-primary font-medium tracking-wide uppercase text-sm">
+              <Monitor className="w-5 h-5 text-[#ff5757]" />
+              <span className="text-[#ff5757] font-bold tracking-wide uppercase text-sm">
                 Our Work
               </span>
             </div>

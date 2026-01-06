@@ -35,27 +35,27 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="relative bg-muted py-24 lg:py-32">
+    <section className="relative bg-muted py-12 lg:py-16">
 
       <div className="relative z-20 mx-6 md:mx-12">
         {/* Two column layout aligned to 30%/70% grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%]">
           {/* Left Column - Label (30%) */}
           <div className="pr-4 lg:pr-6 pl-4 lg:pl-8">
-            <div className="flex items-center gap-2 text-primary">
+            <div className="flex items-center gap-2 text-[#ff5757]">
               <MessageCircle className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-wider uppercase">FAQ</span>
+              <span className="text-sm font-bold tracking-wider uppercase">FAQ</span>
             </div>
           </div>
 
           {/* Right Column - Accordion (70%) */}
-          <div className="pl-4 lg:pl-8 mt-8 lg:mt-0">
+          <div className="pl-4 lg:pl-8 pr-4 lg:pr-8 mt-8 lg:mt-0">
             <Accordion type="single" collapsible defaultValue="item-0" className="space-y-3">
               {faqs.map((faq, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border border-border rounded-lg px-6 bg-background"
+                  className="border-b border-border bg-transparent data-[state=open]:bg-white data-[state=open]:border-transparent rounded-lg px-6"
                 >
                   <AccordionTrigger className="text-left text-base md:text-lg font-medium text-foreground hover:no-underline py-5">
                     {faq.question}

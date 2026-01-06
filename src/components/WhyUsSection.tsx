@@ -73,10 +73,10 @@ const WhyUsSection = () => {
         {/* Two column layout aligned to 30%/70% grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%]">
           {/* Left Column - Label (30%) */}
-          <div className="pr-4 lg:pr-6">
-            <div className="flex items-center gap-2 text-primary">
+          <div className="pr-4 lg:pr-6 pl-4 lg:pl-8">
+            <div className="flex items-center gap-2 text-[#ff5757]">
               <Sparkles className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-wider uppercase">Why Us</span>
+              <span className="text-sm font-bold tracking-wider uppercase">Why Us</span>
             </div>
           </div>
 

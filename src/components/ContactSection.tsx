@@ -2,15 +2,14 @@ import { MessageSquare } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section className="relative py-24 md:py-32 bg-muted">
-
+    <section className="relative pt-0 pb-0 bg-muted">
       <div className="relative z-20 mx-6 md:mx-12">
         {/* Two Column Layout aligned to 30%/70% grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-b border-border">
+        <div className="grid grid-cols-1 lg:grid-cols-[30%_70%]">
           {/* Left side - Label (30%) */}
           <div className="flex items-center gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 py-16 md:py-24">
-            <MessageSquare className="w-5 h-5 text-primary" />
-            <span className="text-primary font-medium tracking-wide uppercase text-sm">
+            <MessageSquare className="w-5 h-5 text-[#ff5757]" />
+            <span className="text-[#ff5757] font-bold tracking-wide uppercase text-sm">
               Connect With Winztech
             </span>
           </div>

@@ -12,7 +12,7 @@ const AboutSection = () => {
       <div className="relative z-20 mx-6 md:mx-12">
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%]">
           {/* Left Column - Sticky Label */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block pt-12">
             <div className="sticky top-32 pr-4 lg:pr-6 pl-4 lg:pl-8">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-[#ff5757]" />
@@ -30,7 +30,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right Column - Text Reveal */}
-          <div className="pl-4 lg:pl-8">
+          <div className="pl-4 lg:pl-8 pt-12">
             <TextReveal body={text} className="relative h-[200vh] w-full">
               {(tokens) => (
                 <div className="sticky top-0 flex h-screen items-center">

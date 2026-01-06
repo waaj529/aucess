@@ -84,21 +84,21 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="relative py-24 md:py-32 bg-muted">
+    <section className="relative pt-24 md:pt-32 pb-0 bg-muted">
 
       <div className="relative z-20 mx-6 md:mx-12">
         {/* Two Column Layout aligned to 30%/70% grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-border">
+        <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-b border-border">
           {/* Left side - Label (30%) */}
-          <div className="flex items-start gap-2 pr-4 lg:pr-6 pt-12">
-            <Newspaper className="w-5 h-5 text-primary" />
-            <span className="text-primary font-medium tracking-wide uppercase text-sm">
+          <div className="flex items-start gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 pt-12">
+            <Newspaper className="w-5 h-5 text-[#ff5757]" />
+            <span className="text-[#ff5757] font-bold tracking-wide uppercase text-sm">
               Blog
             </span>
           </div>
 
           {/* Right side - Content (70%) */}
-          <div className="pl-4 lg:pl-6 pt-12">
+          <div className="pl-4 lg:pl-6 pr-4 lg:pr-6 pt-12">
             {/* Header */}
             <div className="mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-6">

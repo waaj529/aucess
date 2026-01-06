@@ -13,12 +13,16 @@ export const TestimonialsColumn = (props: {
   className?: string;
   testimonials: Testimonial[];
   duration?: number;
+  reverse?: boolean;
 }) => {
   return (
     <div className={props.className}>
       <motion.div
+        initial={{
+          translateY: props.reverse ? "-50%" : "0%",
+        }}
         animate={{
-          translateY: "-50%",
+          translateY: props.reverse ? "0%" : "-50%",
         }}
         transition={{
           duration: props.duration || 10,
@@ -33,7 +37,7 @@ export const TestimonialsColumn = (props: {
             {props.testimonials.map(({ text, image, name, role }, i) => (
               <div
                 key={`${name}-${i}`}
-                className="bg-background border border-border rounded-2xl p-6 shadow-sm"
+                className="bg-white border border-border rounded-2xl p-6 shadow-sm"
               >
                 <p className="text-foreground leading-relaxed mb-6">"{text}"</p>
                 <div className="flex items-center gap-4">

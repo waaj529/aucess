@@ -228,7 +228,7 @@ const ServicesSection = () => {
           {/* Left Column - Label (30%) */}
           <div className="relative z-20 pr-4 lg:pr-6 pl-4 lg:pl-8">
             <motion.div
-              className="flex items-center gap-2 text-accent"
+              className="flex items-center gap-2 text-[#ff5757]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
