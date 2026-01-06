@@ -81,29 +81,29 @@ const ServiceCard = ({
   return (
     <div
       id={service.id}
-      className="lg:sticky lg:top-24 w-full bg-background rounded-md transition-all duration-300"
+      className="lg:sticky lg:top-24 w-full self-stretch rounded-2xl transition-all duration-300"
       style={{
         zIndex: index + 1, // Later cards have higher z-index to cover earlier ones
       }}
     >
       <motion.div
-        className="bg-background rounded-md shadow-[0_-8px_30px_rgba(0,0,0,0.12)]"
+        className="flex flex-col justify-center items-start p-6 bg-white rounded-2xl shadow-[0_4px_8px_0_rgba(0,0,0,0.08)]"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Image Container with hover zoom */}
-        <div className="relative overflow-hidden rounded-t-md group cursor-pointer">
+        <div className="w-full self-stretch relative overflow-hidden rounded-2xl group cursor-pointer mb-6">
           <img
             src={service.image}
             alt={service.title}
-            className="w-full h-[400px] md:h-[500px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            className="w-full h-[440px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8">
+        <div className="w-full">
           {/* Tags */}
           <div className="flex flex-wrap gap-3 mb-6">
             {service.tags.map((tag) => (
@@ -117,7 +117,16 @@ const ServiceCard = ({
           </div>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-6 max-w-2xl">
+          <p
+            className="text-foreground/80 mb-6 max-w-2xl"
+            style={{
+              color: "#323437",
+              fontFamily: '"DM Sans", sans-serif',
+              fontSize: "16px",
+              fontWeight: 400,
+              lineHeight: "24px",
+            }}
+          >
             {service.description}
           </p>
 
@@ -217,7 +226,16 @@ const ServicesSection = () => {
               transition={{ duration: 0.6 }}
             >
               <Monitor className="w-5 h-5" />
-              <span className="text-sm font-medium uppercase tracking-wider">
+              <span
+                className="uppercase tracking-wider"
+                style={{
+                  color: "#ff5757",
+                  fontFamily: '"DM Sans", sans-serif',
+                  fontSize: "16px",
+                  fontWeight: 700,
+                  lineHeight: "24px",
+                }}
+              >
                 Our Services
               </span>
             </motion.div>
@@ -234,7 +252,20 @@ const ServicesSection = () => {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.15] tracking-tight">
               Delivering Excellence Through Expertise And Innovation
             </h2>
-            <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            <p
+              className="mt-6 text-muted-foreground max-w-2xl"
+              style={{
+                color: "#323437",
+                fontFamily: '"DM Sans", sans-serif',
+                fontSize: "16px",
+                fontWeight: 400,
+                lineHeight: "24px",
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+                overflow: "hidden",
+              }}
+            >
               Our suite of services is designed to help businesses thrive in the
               digital world. From tailored web development and innovative design
               to robust marketing strategies, we offer everything you need to
@@ -297,7 +328,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Right Content - Stacked Service Cards (70%) */}
-          <div className="relative z-20 pl-4 lg:pl-8">
+          <div className="relative z-20 pl-4 lg:pl-8 pr-4 lg:pr-8">
             {services.map((service, index) => (
               <div key={service.id} className="relative" style={{ marginBottom: index === services.length - 1 ? 0 : '2rem' }}>
                 {/* Invisible sentinel to measure proximity to viewport center */}
