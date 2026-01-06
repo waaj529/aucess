@@ -20,7 +20,7 @@ const StatItem = ({ value, suffix, label, delay = 0 }: StatItemProps) => {
       const steps = 60;
       const increment = numericValue / steps;
       let current = 0;
-      
+
       const timer = setInterval(() => {
         current += increment;
         if (current >= numericValue) {
@@ -41,9 +41,9 @@ const StatItem = ({ value, suffix, label, delay = 0 }: StatItemProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="flex flex-col items-center justify-center py-12 px-6 border-l border-border first:border-l-0"
+      className="flex flex-col items-center justify-center py-8 px-6 border-b md:border-b-0 md:border-r border-border lg:border-r last:border-0"
     >
-      <span className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-foreground">
+      <span className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-foreground">
         {count}{suffix}
       </span>
       <span className="mt-4 text-sm md:text-base text-muted-foreground tracking-wide">
@@ -61,10 +61,12 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="relative bg-secondary/50">
-      
-      <div className="relative z-20 mx-6 md:mx-12">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+    <section className="relative bg-background">
+      <div className="relative z-20 mx-6 md:mx-12 border-t border-b border-border">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          {/* Empty First Column */}
+          <div className="hidden lg:block" />
+
           {stats.map((stat, index) => (
             <StatItem
               key={stat.label}

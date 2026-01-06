@@ -203,7 +203,7 @@ const WorkSection = () => {
 
       {/* Pinned Container */}
       <div ref={triggerRef} className="min-h-screen overflow-hidden relative">
-        <div className="relative z-20 mx-6 md:mx-12 pt-24 md:pt-32">
+        <div className="relative z-20 mx-6 md:mx-12">
           {/* Two Column Layout aligned to 30%/70% grid */}
           <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-border">
             {/* Left side - Label (30%) */}
