@@ -3,12 +3,13 @@ import { motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Monitor } from "lucide-react";
 
 // Import service images
-import webDesignImg from "@/assets/services/web-design.jpg";
-import seoMarketingImg from "@/assets/services/seo-marketing.jpg";
-import contentStrategyImg from "@/assets/services/content-strategy.jpg";
-import appDevelopmentImg from "@/assets/services/app-development.jpg";
-import ecommerceImg from "@/assets/services/ecommerce.jpg";
-import uxDesignImg from "@/assets/services/ux-design.jpg";
+import aiSoftwareImg from "@/assets/services/ai-software-v2.png";
+import aiAppsImg from "@/assets/services/ai-apps-v2.png";
+import machineLearningImg from "@/assets/services/machine-learning-v2.png";
+import computerVisionImg from "@/assets/services/computer-vision-v2.png";
+import automationImg from "@/assets/services/automation-v2.png";
+import agenticAiImg from "@/assets/services/agentic-ai-v2.png";
+import devopsImg from "@/assets/services/devops-v2.png";
 
 interface Service {
   id: string;
@@ -20,52 +21,60 @@ interface Service {
 
 const services: Service[] = [
   {
-    id: "web-design",
-    title: "Web Design & Development",
+    id: "ai-websites-software",
+    title: "AI Websites & Software",
     description:
-      "We craft visually stunning, user-centric websites that drive engagement and deliver seamless experiences across all devices, blending design, functionality, and performance to elevate your brand's online presence.",
-    image: webDesignImg,
-    tags: ["UX Design", "Custom CMS", "UX Strategy", "Responsive Layouts"],
+      "We build intelligent, adaptive websites and robust software solutions infused with AI capabilities to deliver dynamic user experiences and streamline business operations.",
+    image: aiSoftwareImg,
+    tags: ["AI Integration", "Next.js", "Cloud Architecture", "SaaS Development"],
   },
   {
-    id: "seo-marketing",
-    title: "SEO & Digital Marketing",
+    id: "ai-mobile-apps",
+    title: "AI Mobile Apps",
     description:
-      "We implement data-driven SEO strategies and targeted digital marketing campaigns that increase visibility, attract quality traffic, and convert visitors into loyal customers.",
-    image: seoMarketingImg,
-    tags: ["Google Analytics", "Moz", "Mailchimp", "Meta Ads Manager"],
+      "Create next-generation mobile applications with embedded AI features, providing smart, personalized interactions and seamless performance on iOS and Android.",
+    image: aiAppsImg,
+    tags: ["React Native", "Flutter", "Smart Features", "Cross-Platform"],
   },
   {
-    id: "content-strategy",
-    title: "Content Creation & Strategy",
+    id: "machine-learning",
+    title: "Machine Learning",
     description:
-      "We develop compelling content strategies that resonate with your audience, build brand authority, and drive meaningful engagement across all digital channels.",
-    image: contentStrategyImg,
-    tags: ["Notion", "Trello", "Buffer", "Grammarly"],
+      "Harness the power of data with custom machine learning models designed to predict trends, optimize decision-making, and uncover hidden opportunities.",
+    image: machineLearningImg,
+    tags: ["Predictive Analytics", "Deep Learning", "Data Mining", "Neural Networks"],
   },
   {
-    id: "app-development",
-    title: "App Development",
+    id: "computer-vision",
+    title: "Computer Vision",
     description:
-      "We build intuitive, high-performance mobile and web apps tailored to your users' needs, delivering seamless functionality and an exceptional user experience.",
-    image: appDevelopmentImg,
-    tags: ["React Native", "Flutter", "Node.js", "Swift (For iOS)"],
+      "Implement advanced computer vision systems that enable machines to interpret and understand visual information for automation, security, and analysis.",
+    image: computerVisionImg,
+    tags: ["Image Recognition", "Object Detection", "Video Analytics", "Visual AI"],
   },
   {
-    id: "ecommerce",
-    title: "E-Commerce Solutions",
+    id: "automation",
+    title: "Automation",
     description:
-      "We create powerful e-commerce platforms that streamline your online sales, enhance customer experience, and scale with your growing business needs.",
-    image: ecommerceImg,
-    tags: ["Klaviyo", "PayPal", "Wix", "Magento"],
+      "Drive efficiency by automating complex workflows and repetitive tasks with intelligent logic, reducing operational costs and minimizing human error.",
+    image: automationImg,
+    tags: ["Workflow Automation", "RPA", "Business Logic", "Optimized Processes"],
   },
   {
-    id: "ux-design",
-    title: "UX/UI Design",
+    id: "agentic-ai-chatbot",
+    title: "Agentic AI & Chatbots",
     description:
-      "Our UX/UI designs focus on user behavior and aesthetics to create intuitive, accessible, and engaging interfaces that delight users and enhance brand loyalty.",
-    image: uxDesignImg,
-    tags: ["Figma", "Sketch", "Adobe XD", "Framer"],
+      "Deploy autonomous agents and sophisticated chatbots capable of reasoning, acting, and engaging with users to provide support and execute tasks autonomously.",
+    image: agenticAiImg,
+    tags: ["Conversational AI", "NLP", "Autonomous Agents", "Support Bots"],
+  },
+  {
+    id: "devops-deployment",
+    title: "DevOps & Deployment",
+    description:
+      "Ensure rapid, reliable, and secure software delivery with modern DevOps practices, automated CI/CD pipelines, and scalable cloud infrastructure management.",
+    image: devopsImg,
+    tags: ["CI/CD Pipelines", "Docker & Kubernetes", "Cloud Infrastructure", "Site Reliability"],
   },
 ];
 
@@ -330,12 +339,41 @@ const ServicesSection = () => {
           {/* Right Content - Stacked Service Cards (70%) */}
           <div className="relative z-20 pl-4 lg:pl-8 pr-4 lg:pr-8">
             {services.map((service, index) => (
-              <div key={service.id} className="relative" style={{ marginBottom: index === services.length - 1 ? 0 : '2rem' }}>
+              <div key={service.id} className="contents">
                 {/* Invisible sentinel to measure proximity to viewport center */}
                 <div
                   ref={(el) => setSentinelRef(el, index)}
                   aria-hidden
-                  className="absolute -top-32 left-0 h-8 w-8 pointer-events-none"
+                  className="absolute left-0 w-full h-px -mt-32 pointer-events-none opacity-0"
+                  style={{ top: 'auto', position: 'absolute' }} // This sentinel needs to be positioned relative to the flow? No, if I use "contents", the children are direct children of the grid column.
+                />
+                {/* 
+                    Detailed Explanation for "contents":
+                    "contents" makes the wrapper disappear from the accessibility tree and layout tree, 
+                    so its children act as direct children of the parent grid/flex.
+                    However, "absolute" positioning inside "contents" can be tricky.
+                    
+                    Better approach:
+                    Don't use a wrapper. Return a Fragment.
+                    BUT, we need to attach the key.
+                    
+                    Let's just use the ServiceCard as the main block.
+                    The sentinel can be INSIDE the ServiceCard component or just a sibling.
+                    
+                    If I make ServiceCard sticky, it MUST be a direct child of the container for "sticky" to work relative to that container.
+                    The current wrapper `div className="relative"` creates a NEW stacking context/containing block, so `sticky` only sticks WITHIN that div. Since that div is exactly the height of the card, "sticky" does nothing effectively (or it sticks for 0 pixels).
+                    
+                    FIX: Remove the wrapper. Pass the sentinel ref to the ServiceCard or put it before it.
+                 */}
+
+                {/* Sentinel needs to be in the document flow to mark the position. 
+                     If I put it before the sticky element, it will scroll away.
+                     That works for scrolling detection.
+                  */}
+                <div
+                  ref={(el) => setSentinelRef(el, index)}
+                  className="absolute pointer-events-none opacity-0"
+                  style={{ marginTop: '-20vh' }} // Offset for detection
                 />
 
                 <ServiceCard
@@ -343,10 +381,11 @@ const ServicesSection = () => {
                   index={index}
                   totalCards={services.length}
                 />
+
+                {/* Spacer between cards effectively (margin bottom) */}
+                <div className="h-8 lg:h-32" />
               </div>
             ))}
-            {/* Extra space at bottom for last card to be visible */}
-            <div className="h-32" />
           </div>
         </div>
       </div>
