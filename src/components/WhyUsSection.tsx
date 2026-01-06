@@ -33,7 +33,7 @@ const reasons = [
 const WhyUsSection = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [isHovering, setIsHovering] = useState(false);
-  
+
   const containerRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
@@ -69,11 +69,11 @@ const WhyUsSection = () => {
   return (
     <section className="relative bg-muted py-24 lg:py-32">
 
-      <div className="relative mx-6 md:mx-12">
+      <div className="relative z-20 mx-6 md:mx-12">
         {/* Two column layout aligned to 30%/70% grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%]">
           {/* Left Column - Label (30%) */}
-          <div className="pr-6 lg:pr-8">
+          <div className="pr-4 lg:pr-6">
             <div className="flex items-center gap-2 text-primary">
               <Sparkles className="w-4 h-4" />
               <span className="text-sm font-medium tracking-wider uppercase">Why Us</span>
@@ -81,89 +81,88 @@ const WhyUsSection = () => {
           </div>
 
           {/* Right Column - Content (70%) */}
-          <div className="pl-6 lg:pl-8 mt-8 lg:mt-0">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-6">
-            Transforming Ideas Into Tangible Outcomes
-          </h2>
-          
-          {/* Description */}
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-12">
-            At WinzTech, our work is all about results. We approach each project with a deep understanding of our clients' needs, ensuring every solution is crafted to deliver value.
-          </p>
+          <div className="pl-4 lg:pl-6 mt-8 lg:mt-0">
+            {/* Heading */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-6">
+              Transforming Ideas Into Tangible Outcomes
+            </h2>
 
-          {/* Two Column Grid for Reasons and Image */}
-          <div 
-            ref={containerRef}
-            onMouseMove={handleMove}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative"
-          >
-            {/* Left - Reasons List */}
-            <div className="space-y-0">
-              {reasons.map((reason, index) => (
-                <div
-                  key={reason.title}
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onMouseLeave={handleMouseLeave}
-                  className="border-t border-border py-5 cursor-pointer transition-colors group"
-                >
-                  <h3 
-                    className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${
-                      activeIndex === index && isHovering ? 'text-primary' : 'text-foreground group-hover:text-primary'
-                    }`}
-                  >
-                    {reason.title}
-                  </h3>
-                </div>
-              ))}
-              <div className="border-t border-border" />
-            </div>
+            {/* Description */}
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-12">
+              At WinzTech, our work is all about results. We approach each project with a deep understanding of our clients' needs, ensuring every solution is crafted to deliver value.
+            </p>
 
-            {/* Right - Image Container (appears on hover) */}
-            <div 
-              ref={imageContainerRef}
-              className="relative hidden lg:block h-full min-h-[400px]"
+            {/* Two Column Grid for Reasons and Image */}
+            <div
+              ref={containerRef}
+              onMouseMove={handleMove}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 relative"
             >
-              <motion.div
-                className="absolute right-0 top-0"
-                style={{ y: imagePos.y }}
-                animate={{ 
-                  opacity: isHovering ? 1 : 0,
-                  scale: isHovering ? 1 : 0.95,
-                }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >
-                {/* Unified Tilted Card with Image and Description */}
-                <div 
-                  className="relative bg-background p-4 shadow-xl rotate-3"
-                  style={{ maxWidth: '320px' }}
-                >
-                  {/* Image */}
-                  <motion.img
-                    key={activeIndex}
-                    src={activeIndex !== null ? reasons[activeIndex].image : reasons[0].image}
-                    alt={activeIndex !== null ? reasons[activeIndex].title : reasons[0].title}
-                    className="w-full h-[280px] object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.2 }}
-                  />
-                  
-                  {/* Description inside the same card */}
-                  <motion.p 
-                    className="text-sm text-muted-foreground leading-relaxed mt-4 italic"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    key={`desc-${activeIndex}`}
+              {/* Left - Reasons List */}
+              <div className="space-y-0">
+                {reasons.map((reason, index) => (
+                  <div
+                    key={reason.title}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={handleMouseLeave}
+                    className="border-t border-border py-5 cursor-pointer transition-colors group"
                   >
-                    {activeIndex !== null ? reasons[activeIndex].description : reasons[0].description}
-                  </motion.p>
-                </div>
-              </motion.div>
+                    <h3
+                      className={`text-xl md:text-2xl font-semibold transition-colors duration-300 ${activeIndex === index && isHovering ? 'text-primary' : 'text-foreground group-hover:text-primary'
+                        }`}
+                    >
+                      {reason.title}
+                    </h3>
+                  </div>
+                ))}
+                <div className="border-t border-border" />
+              </div>
+
+              {/* Right - Image Container (appears on hover) */}
+              <div
+                ref={imageContainerRef}
+                className="relative hidden lg:block h-full min-h-[400px]"
+              >
+                <motion.div
+                  className="absolute right-0 top-0"
+                  style={{ y: imagePos.y }}
+                  animate={{
+                    opacity: isHovering ? 1 : 0,
+                    scale: isHovering ? 1 : 0.95,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  {/* Unified Tilted Card with Image and Description */}
+                  <div
+                    className="relative bg-background p-4 shadow-xl rotate-3"
+                    style={{ maxWidth: '320px' }}
+                  >
+                    {/* Image */}
+                    <motion.img
+                      key={activeIndex}
+                      src={activeIndex !== null ? reasons[activeIndex].image : reasons[0].image}
+                      alt={activeIndex !== null ? reasons[activeIndex].title : reasons[0].title}
+                      className="w-full h-[280px] object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.2 }}
+                    />
+
+                    {/* Description inside the same card */}
+                    <motion.p
+                      className="text-sm text-muted-foreground leading-relaxed mt-4 italic"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                      key={`desc-${activeIndex}`}
+                    >
+                      {activeIndex !== null ? reasons[activeIndex].description : reasons[0].description}
+                    </motion.p>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>

@@ -64,12 +64,12 @@ const secondColumn = testimonials.slice(4, 9);
 const TestimonialsSection = () => {
   return (
     <section className="relative py-24 md:py-32 bg-muted overflow-hidden">
-      
+
       <div className="relative z-20 mx-6 md:mx-12">
         {/* Two Column Layout aligned to 30%/70% grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-border">
           {/* Left side - Label (30%) */}
-          <div className="relative z-20 flex items-center gap-2 pr-6 lg:pr-8 pt-12">
+          <div className="relative z-20 flex items-center gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 pt-12">
             <MessageSquare className="w-5 h-5 text-primary" />
             <span className="text-primary font-medium tracking-wide uppercase text-sm">
               Testimonial
@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Right side - Content (70%) */}
-          <div className="relative z-20 pl-6 lg:pl-8 pt-12">
+          <div className="relative z-20 pl-4 lg:pl-8 pt-12">
             {/* Heading & Description */}
             <div className="mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-6">

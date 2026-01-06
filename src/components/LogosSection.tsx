@@ -16,12 +16,12 @@ const LogosSection = () => {
   return (
     <section className="relative bg-background">
       {/* Content container with margins matching border lines */}
-      <div className="mx-6 md:mx-12">
+      <div className="relative z-20 mx-6 md:mx-12 border-b border-border">
         {/* Two column layout aligned to 30%/70% grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] min-h-[80px]">
           {/* Left Column - Text (30%) */}
-          <div className="flex items-center py-5 md:py-6 pr-6 lg:pr-8">
-            <p className="text-sm text-muted-foreground italic">
+          <div className="flex items-center py-5 md:py-6 pr-4 lg:pr-6 pl-4 lg:pl-8">
+            <p className="text-sm font-bold text-muted-foreground">
               Trusted by thousands of
               <br />
               companies around the world
@@ -29,7 +29,7 @@ const LogosSection = () => {
           </div>
 
           {/* Right Column - Logos Marquee (70%) */}
-          <div className="flex items-center overflow-hidden py-5 md:py-6 pl-6 lg:pl-8">
+          <div className="flex items-center overflow-hidden py-5 md:py-6 pl-4 lg:pl-8">
             <div className="flex animate-marquee">
               {duplicatedLogos.map((logo, index) => {
                 const IconComponent = logo.icon;

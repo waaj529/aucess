@@ -29,26 +29,26 @@ const ProjectCard = ({ image, title, description }: ProjectCardProps) => {
   }, [isHovered]);
 
   return (
-    <div 
+    <div
       className="group cursor-pointer flex-shrink-0 w-[350px] md:w-[400px] lg:w-[450px] relative rounded-2xl overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Default light background */}
-      <div 
+      <div
         className="absolute inset-0 bg-background border border-border rounded-2xl transition-opacity duration-300"
         style={{ opacity: hoverPhase === 'idle' ? 1 : 0 }}
       />
-      
+
       {/* White noise phase */}
-      <div 
+      <div
         className="absolute inset-0 rounded-2xl transition-opacity duration-200"
-        style={{ 
+        style={{
           background: '#F1EFE9',
           opacity: hoverPhase === 'white' ? 1 : 0,
         }}
       >
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
@@ -58,14 +58,14 @@ const ProjectCard = ({ image, title, description }: ProjectCardProps) => {
       </div>
 
       {/* Dark noise phase */}
-      <div 
+      <div
         className="absolute inset-0 rounded-2xl transition-opacity duration-300"
-        style={{ 
+        style={{
           background: '#1a1a1a',
           opacity: hoverPhase === 'dark' ? 1 : 0,
         }}
       >
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
@@ -200,14 +200,14 @@ const WorkSection = () => {
 
   return (
     <section ref={sectionRef} className="relative bg-muted">
-      
+
       {/* Pinned Container */}
       <div ref={triggerRef} className="min-h-screen overflow-hidden relative">
-        <div className="mx-6 md:mx-12 pt-24 md:pt-32">
+        <div className="relative z-20 mx-6 md:mx-12 pt-24 md:pt-32">
           {/* Two Column Layout aligned to 30%/70% grid */}
           <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[30%_70%] border-t border-border">
             {/* Left side - Label (30%) */}
-            <div className="relative z-20 lg:row-span-2 flex items-start gap-2 pr-6 lg:pr-8 pt-12">
+            <div className="relative z-20 lg:row-span-2 flex items-start gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 pt-12">
               <Monitor className="w-5 h-5 text-primary" />
               <span className="text-primary font-medium tracking-wide uppercase text-sm">
                 Our Work
@@ -215,7 +215,7 @@ const WorkSection = () => {
             </div>
 
             {/* Right side - Title & Description (70%) */}
-            <div className="relative z-20 pl-6 lg:pl-8 pt-12 pb-12">
+            <div className="relative z-20 pl-4 lg:pl-8 pt-12 pb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground leading-tight tracking-tight mb-6">
                 Innovative Solutions That Speak For Themselves
               </h2>
@@ -225,7 +225,7 @@ const WorkSection = () => {
             </div>
 
             {/* Cards Container - Under the right column (70%) */}
-            <div className="relative z-20 lg:col-start-2 pl-6 lg:pl-8 overflow-visible pb-24 pt-8 border-t border-border">
+            <div className="relative z-20 lg:col-start-2 pl-4 lg:pl-8 overflow-visible pb-24 pt-8 border-t border-border">
               <div
                 ref={cardsContainerRef}
                 className="flex gap-8 pr-24"

@@ -119,7 +119,7 @@ const HeroSection = () => {
   // Mobile Layout
   if (isMobile) {
     return (
-      <section className="pt-24 pb-8 px-4">
+      <section className="pt-24 pb-8 px-4 relative z-20">
         {/* Content */}
         <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold leading-[1.15] tracking-tight text-foreground mb-5">
@@ -191,7 +191,7 @@ const HeroSection = () => {
   return (
     <section
       ref={trackRef}
-      className="relative"
+      className="relative z-20"
       style={{ height: "200vh" }}
     >
       {/* Sticky Container */}

@@ -82,7 +82,7 @@ const ServiceCard = ({
     <div
       id={service.id}
       className="lg:sticky lg:top-24 w-full bg-background rounded-md transition-all duration-300"
-      style={{ 
+      style={{
         zIndex: index + 1, // Later cards have higher z-index to cover earlier ones
       }}
     >
@@ -153,17 +153,17 @@ const ServicesSection = () => {
 
     const updateActiveByProximity = () => {
       frame = requestAnimationFrame(updateActiveByProximity);
-      
+
       if (!sentinelRefs.current.length) return;
-      
+
       const now = Date.now();
       if (now - lastChangeTime < DEBOUNCE_MS) return;
-      
+
       // Compute distance of each sentinel to viewport center (1/3 from top)
       const centerY = window.innerHeight / 3;
       let bestIndex = 0;
       let bestDist = Infinity;
-      
+
       sentinelRefs.current.forEach((node, i) => {
         if (!node) return;
         const rect = node.getBoundingClientRect();
@@ -174,7 +174,7 @@ const ServicesSection = () => {
           bestIndex = i;
         }
       });
-      
+
       // Add hysteresis - only switch if significantly closer
       if (bestIndex !== currentActiveIndex && bestDist < 200) {
         currentActiveIndex = bestIndex;
@@ -203,12 +203,12 @@ const ServicesSection = () => {
 
   return (
     <section ref={sectionRef} className="py-20 md:py-32 bg-background relative">
-      
+
       <div className="relative z-20 mx-6 md:mx-12">
         {/* Section Header - Two Column Layout aligned to 30%/70% grid */}
         <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[30%_70%] mb-16 md:mb-24">
           {/* Left Column - Label (30%) */}
-          <div className="relative z-20 pr-6 lg:pr-8">
+          <div className="relative z-20 pr-4 lg:pr-6 pl-4 lg:pl-8">
             <motion.div
               className="flex items-center gap-2 text-accent"
               initial={{ opacity: 0, y: 20 }}
@@ -225,7 +225,7 @@ const ServicesSection = () => {
 
           {/* Right Column - Heading & Description (70%) */}
           <motion.div
-            className="relative z-20 pl-6 lg:pl-8 mt-8 lg:mt-0"
+            className="relative z-20 pl-4 lg:pl-8 mt-8 lg:mt-0"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -246,7 +246,7 @@ const ServicesSection = () => {
         {/* Two Column Layout - Services aligned to 30%/70% grid */}
         <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[30%_70%]">
           {/* Left Sidebar - Sticky on Desktop, Horizontal Scroll on Mobile (30%) */}
-          <div className="relative z-20 pr-6 lg:pr-8">
+          <div className="relative z-20 pr-4 lg:pr-6 pl-4 lg:pl-8">
             {/* Mobile: Horizontal Scrollable Menu */}
             <div className="lg:hidden overflow-x-auto pb-4 -mx-6 px-6">
               <div className="flex gap-4 min-w-max">
@@ -254,11 +254,10 @@ const ServicesSection = () => {
                   <button
                     key={service.id}
                     onClick={() => scrollToService(index)}
-                    className={`px-4 py-2 text-sm font-medium whitespace-nowrap rounded-full border transition-all duration-300 ${
-                      activeIndex === index
-                        ? "bg-foreground text-background border-foreground"
-                        : "bg-transparent text-muted-foreground border-border hover:border-foreground/40"
-                    }`}
+                    className={`px-4 py-2 text-sm font-medium whitespace-nowrap rounded-full border transition-all duration-300 ${activeIndex === index
+                      ? "bg-foreground text-background border-foreground"
+                      : "bg-transparent text-muted-foreground border-border hover:border-foreground/40"
+                      }`}
                   >
                     {service.title}
                   </button>
@@ -273,29 +272,24 @@ const ServicesSection = () => {
                   <button
                     key={service.id}
                     onClick={() => scrollToService(index)}
-                    className={`w-full flex items-center justify-between py-4 text-left transition-all duration-300 ease-out group ${
-                      activeIndex === index
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground/70"
-                    }`}
+                    className={`w-full flex items-center justify-between py-4 text-left transition-all duration-300 ease-out group ${activeIndex === index
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground/70"
+                      }`}
                   >
                     <span
-                      className={`text-lg font-medium transition-all duration-300 ${
-                        activeIndex === index ? "font-bold" : ""
-                      }`}
+                      className={`text-lg font-medium transition-all duration-300 ${activeIndex === index ? "font-bold" : ""
+                        }`}
                     >
                       {service.title}
                     </span>
-                    <motion.span
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{
-                        opacity: activeIndex === index ? 1 : 0,
-                        x: activeIndex === index ? 0 : -10,
-                      }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                    >
+                    {activeIndex === index ? (
                       <ArrowUpRight className="w-5 h-5" />
-                    </motion.span>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="12" viewBox="0 0 19 12" fill="none">
+                        <path d="M12.8934 1.62529C12.7879 1.5198 12.7287 1.37672 12.7287 1.22754C12.7287 1.07836 12.7879 0.93528 12.8934 0.829791C12.9989 0.724302 13.142 0.665039 13.2912 0.665039C13.4404 0.665039 13.5834 0.724302 13.6889 0.829791L18.4619 5.60276C18.5674 5.70825 18.6266 5.85133 18.6266 6.00051C18.6266 6.1497 18.5674 6.29277 18.4619 6.39826L13.6889 11.1712C13.5834 11.2767 13.4404 11.336 13.2912 11.336C13.142 11.336 12.9989 11.2767 12.8934 11.1712C12.7879 11.0657 12.7287 10.9227 12.7287 10.7735C12.7287 10.6243 12.7879 10.4812 12.8934 10.3757L16.7062 6.56293L0.563211 6.56372C0.413838 6.56372 0.270584 6.50438 0.164961 6.39876C0.059339 6.29314 0 6.14988 0 6.00051C0 5.85114 0.059339 5.70788 0.164961 5.60226C0.270584 5.49664 0.413838 5.4373 0.563211 5.4373L16.7062 5.4381L12.8934 1.62529Z" fill="#777777" />
+                      </svg>
+                    )}
                   </button>
                 ))}
               </nav>
@@ -303,7 +297,7 @@ const ServicesSection = () => {
           </div>
 
           {/* Right Content - Stacked Service Cards (70%) */}
-          <div className="relative z-20 pl-6 lg:pl-8">
+          <div className="relative z-20 pl-4 lg:pl-8">
             {services.map((service, index) => (
               <div key={service.id} className="relative" style={{ marginBottom: index === services.length - 1 ? 0 : '2rem' }}>
                 {/* Invisible sentinel to measure proximity to viewport center */}
@@ -312,7 +306,7 @@ const ServicesSection = () => {
                   aria-hidden
                   className="absolute -top-32 left-0 h-8 w-8 pointer-events-none"
                 />
-                
+
                 <ServiceCard
                   service={service}
                   index={index}

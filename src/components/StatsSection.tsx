@@ -63,7 +63,7 @@ const StatsSection = () => {
   return (
     <section className="relative bg-secondary/50">
       
-      <div className="relative mx-6 md:mx-12">
+      <div className="relative z-20 mx-6 md:mx-12">
         <div className="grid grid-cols-1 md:grid-cols-3">
           {stats.map((stat, index) => (
             <StatItem

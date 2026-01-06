@@ -19,11 +19,10 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
-        }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background"
     >
       {/* Desktop - with left/right padding, no vertical lines in header */}
-      <div className="hidden lg:flex h-20 border-b border-border relative px-12">
+      <div className="hidden lg:flex h-20 border-b border-l border-r border-border relative mx-12">
 
         {/* Left column - Logo only */}
         <div className="w-1/2 flex items-center pl-4">
@@ -53,7 +52,7 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
       </div>
 
       {/* Mobile layout */}
-      <div className="lg:hidden px-6 border-b border-border">
+      <div className="lg:hidden mx-6 md:mx-12 border-b border-l border-r border-border">
         <nav className="flex items-center justify-between h-20">
           <a href="/" className="flex items-center">
             <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" />

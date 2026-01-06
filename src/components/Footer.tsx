@@ -29,7 +29,7 @@ const Footer = () => {
     <footer className="relative bg-muted">
       
       {/* Top Section */}
-      <div className="relative border-t border-border">
+      <div className="relative z-20 border-t border-border">
         <div className="mx-6 md:mx-12">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr_1.5fr_auto] gap-8 lg:gap-0 py-16">
             {/* Newsletter */}

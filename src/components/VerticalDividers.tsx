@@ -1,9 +1,9 @@
 const VerticalDividers = () => {
   return (
     <>
-      {/* Fixed 3-line grid system - spans full viewport height */}
+      {/* Fixed 3-line grid system - clips to viewport below navbar */}
       <div
-        className="fixed inset-0 pointer-events-none z-0"
+        className="fixed inset-0 pointer-events-none z-10"
         style={{ top: '80px' }}
       >
         <div className="relative h-full mx-6 md:mx-12">
