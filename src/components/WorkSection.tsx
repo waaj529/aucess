@@ -30,22 +30,25 @@ const ProjectCard = ({ image, title, description }: ProjectCardProps) => {
 
   return (
     <div
-      className="group cursor-pointer flex-shrink-0 w-[350px] md:w-[400px] lg:w-[450px] relative rounded-2xl overflow-hidden"
+      className="group cursor-pointer flex-shrink-0 relative flex flex-col items-start gap-5 p-5 rounded-2xl border border-border overflow-hidden transition-all duration-300"
+      style={{
+        width: 'fit-content', // Allow container to fit the content width
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Default light background */}
-      <div
-        className="absolute inset-0 bg-background border border-border rounded-2xl transition-opacity duration-300"
-        style={{ opacity: hoverPhase === 'idle' ? 1 : 0 }}
-      />
+      {/* Background Layers */}
 
-      {/* White noise phase */}
+      {/* Default White Background (Always present but covered by others) */}
+      <div className="absolute inset-0 bg-white transition-colors duration-300" />
+
+      {/* White Noise Phase */}
       <div
-        className="absolute inset-0 rounded-2xl transition-opacity duration-200"
+        className="absolute inset-0 transition-opacity duration-200 pointer-events-none"
         style={{
           background: '#F1EFE9',
           opacity: hoverPhase === 'white' ? 1 : 0,
+          zIndex: 1,
         }}
       >
         <div
@@ -57,12 +60,13 @@ const ProjectCard = ({ image, title, description }: ProjectCardProps) => {
         />
       </div>
 
-      {/* Dark noise phase */}
+      {/* Dark Noise Phase */}
       <div
-        className="absolute inset-0 rounded-2xl transition-opacity duration-300"
+        className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
         style={{
           background: '#1a1a1a',
           opacity: hoverPhase === 'dark' ? 1 : 0,
+          zIndex: 2,
         }}
       >
         <div
@@ -74,30 +78,49 @@ const ProjectCard = ({ image, title, description }: ProjectCardProps) => {
         />
       </div>
 
-      {/* Card Content */}
-      <div className="relative z-10 p-5">
+      {/* Content Layer (Above backgrounds) */}
+      <div className="relative z-10 flex flex-col items-start gap-5">
         {/* Image Container */}
-        <div className="overflow-hidden rounded-xl border-4 border-transparent group-hover:border-background/20 transition-all duration-500">
+        <div
+          className="overflow-hidden rounded-xl bg-muted border-4 border-transparent group-hover:border-white/10 transition-colors duration-300"
+          style={{
+            width: '323.98px',
+            height: '251.8px',
+            maxWidth: '324px',
+            aspectRatio: '323.98/251.80'
+          }}
+        >
           <img
             src={image}
             alt={title}
-            className="w-full h-72 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
 
-        {/* Text Content - Always visible */}
-        <div className="mt-6">
+        {/* Text Content */}
+        <div className="w-full max-w-[324px]">
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1">
-              <h3 className="text-xl font-bold mb-2 tracking-tight transition-colors duration-500 text-foreground group-hover:text-white">
+              <h3
+                className={`text-xl font-bold mb-2 tracking-tight transition-colors duration-300 ${hoverPhase === 'dark' ? 'text-white' : 'text-foreground'
+                  }`}
+              >
                 {title}
               </h3>
-              <p className="text-sm leading-relaxed transition-colors duration-500 text-muted-foreground group-hover:text-white/70">
+              <p
+                className={`text-sm leading-relaxed transition-colors duration-300 ${hoverPhase === 'dark' ? 'text-white/70' : 'text-muted-foreground'
+                  }`}
+              >
                 {description}
               </p>
             </div>
-            <div className="w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-500 border-border group-hover:border-white/30">
-              <ArrowUpRight className="w-4 h-4 transition-all duration-500 text-foreground group-hover:text-white" />
+            <div
+              className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${hoverPhase === 'dark'
+                ? 'border-white/30 text-white'
+                : 'border-border text-foreground'
+                }`}
+            >
+              <ArrowUpRight className="w-4 h-4" />
             </div>
           </div>
         </div>
@@ -154,8 +177,10 @@ const WorkSection = () => {
     // Calculate how far we need to scroll horizontally
     const getScrollAmount = () => {
       const containerWidth = cardsContainer.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      return -(containerWidth - viewportWidth + 100);
+      // Use the parent's width to ensure we scroll exactly enough to see the end within the grid
+      const parentWidth = cardsContainer.parentElement?.clientWidth || window.innerWidth;
+      // Add a robust buffer (200px) to ensure we definitely reach the end
+      return -(containerWidth - parentWidth + 200);
     };
 
     // Small delay to ensure DOM is ready
@@ -167,7 +192,8 @@ const WorkSection = () => {
           scrollTrigger: {
             trigger: trigger,
             start: "top top",
-            end: () => `+=${cardsContainer.scrollWidth - window.innerWidth + 100}`,
+            // Calculate end based on the scroll distance + visual buffer
+            end: () => `+=${cardsContainer.scrollWidth - (cardsContainer.parentElement?.clientWidth || window.innerWidth) + 200}`,
             pin: true,
             scrub: 1,
             invalidateOnRefresh: true,
@@ -225,7 +251,7 @@ const WorkSection = () => {
             </div>
 
             {/* Cards Container - Under the right column (70%) */}
-            <div className="relative z-20 lg:col-start-2 pl-4 lg:pl-8 overflow-visible pb-24 pt-8 border-t border-border">
+            <div className="relative z-20 lg:col-start-2 pl-4 lg:pl-8 overflow-hidden pb-24 pt-8 border-t border-border border-r">
               <div
                 ref={cardsContainerRef}
                 className="flex gap-8 pr-24"
