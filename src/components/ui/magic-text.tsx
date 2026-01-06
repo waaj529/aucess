@@ -74,9 +74,9 @@ export const MagicText: React.FC<MagicTextProps> = ({ text, highlightWords = [],
         const end = start + 1 / chars.length;
 
         return (
-          <Char 
-            key={i} 
-            progress={scrollYProgress} 
+          <Char
+            key={i}
+            progress={scrollYProgress}
             range={[start, end]}
             isHighlighted={isCharHighlighted(i)}
           >
