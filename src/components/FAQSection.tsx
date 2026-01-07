@@ -33,9 +33,13 @@ const faqs = [
   }
 ];
 
-const FAQSection = () => {
+interface FAQSectionProps {
+  className?: string;
+}
+
+const FAQSection = ({ className }: FAQSectionProps) => {
   return (
-    <section className="relative bg-muted py-12 lg:py-16">
+    <section className={`relative py-12 lg:py-16 ${className ?? 'bg-muted'}`}>
 
       <div className="relative z-20 mx-6 md:mx-12">
         {/* Two column layout aligned to 30%/70% grid */}

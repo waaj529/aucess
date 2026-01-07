@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "Home", href: "/", active: true },
-  { label: "About Us", href: "/about", active: false },
-  { label: "Services", href: "/services", active: false },
-  { label: "Portfolio", href: "/portfolio", active: false },
-  { label: "Pages", href: "#", hasDropdown: true, active: false },
+  { label: "Home", href: "/", hasDropdown: false },
+  { label: "About Us", href: "/about", hasDropdown: false },
+  { label: "Services", href: "/services", hasDropdown: false },
+  { label: "Portfolio", href: "/portfolio", hasDropdown: false },
+  { label: "Pages", href: "#", hasDropdown: true },
 ];
 
 interface NavbarProps {
@@ -16,6 +17,13 @@ interface NavbarProps {
 
 const Navbar = ({ isScrolled = false }: NavbarProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Helper to determine if a link is active
+  const isActive = (path: string) => {
+    if (path === "/" && location.pathname !== "/") return false;
+    return location.pathname === path;
+  };
 
   return (
     <header
@@ -26,9 +34,9 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
 
         {/* Left column - Logo only */}
         <div className="w-1/2 flex items-center pl-4">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" />
-          </a>
+          </Link>
         </div>
 
         {/* Right column - Nav & CTA */}
@@ -36,14 +44,14 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
           <ul className="flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
-                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${link.active ? "text-accent" : "text-foreground/80 hover:text-foreground"
+                <Link
+                  to={link.href}
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors ${isActive(link.href) ? "text-accent" : "text-foreground/80 hover:text-foreground"
                     }`}
                 >
                   {link.label}
                   {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -54,9 +62,9 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
       {/* Mobile layout */}
       <div className="lg:hidden mx-6 md:mx-12 border-b border-l border-r border-border">
         <nav className="flex items-center justify-between h-20">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" />
-          </a>
+          </Link>
           <button
             className="p-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -72,14 +80,14 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
             <ul className="flex flex-col py-4">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="flex items-center justify-between px-6 py-3 text-foreground hover:bg-secondary transition-colors"
+                  <Link
+                    to={link.href}
+                    className={`flex items-center justify-between px-6 py-3 transition-colors ${isActive(link.href) ? "text-accent" : "text-foreground hover:bg-secondary"}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
                     {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li className="px-6 py-3">
