@@ -1,82 +1,8 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, ArrowRight, Monitor } from "lucide-react";
-
-// Import service images
-import aiSoftwareImg from "@/assets/services/ai-software-v2.png";
-import aiAppsImg from "@/assets/services/ai-apps-v2.png";
-import machineLearningImg from "@/assets/services/machine-learning-v2.png";
-import computerVisionImg from "@/assets/services/computer-vision-v2.png";
-import automationImg from "@/assets/services/automation-v2.png";
-import agenticAiImg from "@/assets/services/agentic-ai-v2.png";
-import devopsImg from "@/assets/services/devops-v2.png";
-
-interface Service {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-}
-
-const services: Service[] = [
-  {
-    id: "ai-websites-software",
-    title: "AI Websites & Software",
-    description:
-      "We build intelligent, adaptive websites and robust software solutions infused with AI capabilities to deliver dynamic user experiences and streamline business operations.",
-    image: aiSoftwareImg,
-    tags: ["AI Integration", "Next.js", "Cloud Architecture", "SaaS Development"],
-  },
-  {
-    id: "ai-mobile-apps",
-    title: "AI Mobile Apps",
-    description:
-      "Create next-generation mobile applications with embedded AI features, providing smart, personalized interactions and seamless performance on iOS and Android.",
-    image: aiAppsImg,
-    tags: ["React Native", "Flutter", "Smart Features", "Cross-Platform"],
-  },
-  {
-    id: "machine-learning",
-    title: "Machine Learning",
-    description:
-      "Harness the power of data with custom machine learning models designed to predict trends, optimize decision-making, and uncover hidden opportunities.",
-    image: machineLearningImg,
-    tags: ["Predictive Analytics", "Deep Learning", "Data Mining", "Neural Networks"],
-  },
-  {
-    id: "computer-vision",
-    title: "Computer Vision",
-    description:
-      "Implement advanced computer vision systems that enable machines to interpret and understand visual information for automation, security, and analysis.",
-    image: computerVisionImg,
-    tags: ["Image Recognition", "Object Detection", "Video Analytics", "Visual AI"],
-  },
-  {
-    id: "automation",
-    title: "Automation",
-    description:
-      "Drive efficiency by automating complex workflows and repetitive tasks with intelligent logic, reducing operational costs and minimizing human error.",
-    image: automationImg,
-    tags: ["Workflow Automation", "RPA", "Business Logic", "Optimized Processes"],
-  },
-  {
-    id: "agentic-ai-chatbot",
-    title: "Agentic AI & Chatbots",
-    description:
-      "Deploy autonomous agents and sophisticated chatbots capable of reasoning, acting, and engaging with users to provide support and execute tasks autonomously.",
-    image: agenticAiImg,
-    tags: ["Conversational AI", "NLP", "Autonomous Agents", "Support Bots"],
-  },
-  {
-    id: "devops-deployment",
-    title: "DevOps & Deployment",
-    description:
-      "Ensure rapid, reliable, and secure software delivery with modern DevOps practices, automated CI/CD pipelines, and scalable cloud infrastructure management.",
-    image: devopsImg,
-    tags: ["CI/CD Pipelines", "Docker & Kubernetes", "Cloud Infrastructure", "Site Reliability"],
-  },
-];
+import { Link } from "react-router-dom";
+import { services, Service } from "@/data/services";
 
 const ServiceCard = ({
   service,
@@ -103,13 +29,13 @@ const ServiceCard = ({
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Image Container with hover zoom */}
-        <div className="w-full self-stretch relative overflow-hidden rounded-2xl group cursor-pointer mb-6">
+        <Link to={`/services/${service.id}`} className="w-full self-stretch relative overflow-hidden rounded-2xl group cursor-pointer mb-6 block">
           <img
             src={service.image}
             alt={service.title}
             className="w-full h-[440px] object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
-        </div>
+        </Link>
 
         {/* Content */}
         <div className="w-full">
@@ -140,13 +66,13 @@ const ServiceCard = ({
           </p>
 
           {/* Explore More Link */}
-          <a
-            href="#"
+          <Link
+            to={`/services/${service.id}`}
             className="inline-flex items-center gap-2 text-foreground font-semibold hover:gap-3 transition-all duration-300 group"
           >
             Explore More
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>

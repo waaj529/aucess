@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 import { Monitor } from "lucide-react";
 import ProjectCard from "@/components/ui/ProjectCard";
+import { projects } from "@/data/work";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,38 +13,7 @@ const WorkSection = () => {
   const triggerRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
 
-  const projects = [
-    {
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop",
-      title: "E-Commerce",
-      description: "Boost your online sales with sleek, user-friendly shopping experiences designed to convert.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&auto=format&fit=crop",
-      title: "Landing Page",
-      description: "Capture attention and drive action with stunning, high-converting landing pages.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&auto=format&fit=crop",
-      title: "Food Delivery",
-      description: "Delicious meals at your fingertips with seamless ordering and delivery tracking.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
-      title: "Analytics Dashboard",
-      description: "Transform complex data into clear insights with intuitive visualization tools.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-      title: "Finance App",
-      description: "Empower users to manage their finances with smart, secure mobile solutions.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop",
-      title: "Tech Platform",
-      description: "Build the future with scalable, innovative technology solutions.",
-    },
-  ];
+
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -134,12 +105,13 @@ const WorkSection = () => {
                 className="flex gap-8 pr-24"
               >
                 {projects.map((project) => (
-                  <ProjectCard
-                    key={project.title}
-                    image={project.image}
-                    title={project.title}
-                    description={project.description}
-                  />
+                  <Link to={`/work/${project.id}`} key={project.id} className="block flex-shrink-0">
+                    <ProjectCard
+                      image={project.image}
+                      title={project.title}
+                      description={project.description}
+                    />
+                  </Link>
                 ))}
               </div>
             </div>

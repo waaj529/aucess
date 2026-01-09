@@ -53,14 +53,14 @@ const TeamMember = ({ image, name, role }: TeamMemberProps) => {
 const Team = () => {
     const team = [
         {
-            name: "John Doe",
-            role: "CEO & Founder at WinzTech",
-            image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            name: "Zain Israr",
+            role: "CEO/ AI Engineer",
+            image: "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767891571/image-gen_39_w8f4pw.webp"
         },
         {
-            name: "John Smith",
-            role: "UX/UI Designer at WinzTech",
-            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            name: "Wajid Abbas",
+            role: "Full stack Web developer",
+            image: "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767891674/image-gen_38_y6omnz.webp"
         },
         {
             name: "David Johnson",

@@ -8,7 +8,6 @@ const navLinks = [
   { label: "About Us", href: "/about", hasDropdown: false },
   { label: "Services", href: "/services", hasDropdown: false },
   { label: "Portfolio", href: "/portfolio", hasDropdown: false },
-  { label: "Pages", href: "#", hasDropdown: true },
 ];
 
 interface NavbarProps {
@@ -55,7 +54,9 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
               </li>
             ))}
           </ul>
-          <Button className="rounded-none px-6">Contact</Button>
+          <Link to="/contact">
+            <Button className="rounded-none px-6">Contact</Button>
+          </Link>
         </div>
       </div>
 
@@ -91,7 +92,9 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
                 </li>
               ))}
               <li className="px-6 py-3">
-                <Button className="w-full rounded-none">Contact</Button>
+                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="w-full rounded-none">Contact</Button>
+                </Link>
               </li>
             </ul>
           </div>

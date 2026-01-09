@@ -101,7 +101,7 @@ const Portfolio = () => {
                             <div className="relative z-20 pl-4 lg:pl-8 pt-12 pb-24">
                                 <h2 className="text-3xl md:text-4xl font-bold mb-6">Portfolio Overview</h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
-                                    At WinzTech, we've had the pleasure of working with a diverse range of clients, helping them achieve digital success through custom web design, development, branding, and digital marketing solutions. Below are just a few examples of the work we're proud to have delivered.
+                                    At Aucess, we've had the pleasure of working with a diverse range of clients, helping them achieve digital success through custom web design, development, branding, and digital marketing solutions. Below are just a few examples of the work we're proud to have delivered.
                                 </p>
                             </div>
                         </div>
