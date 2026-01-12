@@ -54,22 +54,22 @@ const Team = () => {
     const team = [
         {
             name: "Zain Israr",
-            role: "CEO/ AI Engineer",
-            image: "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767891571/image-gen_39_w8f4pw.webp"
+            role: "Founder & CEO",
+            image: "https://ik.imagekit.io/luod4wmv7/WhatsApp%20Image%202026-01-11%20at%2021.11.06%20(1).jpeg"
         },
         {
             name: "Wajid Abbas",
-            role: "Full stack Web developer",
+            role: "Founder & CTO",
             image: "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767891674/image-gen_38_y6omnz.webp"
         },
         {
-            name: "David Johnson",
-            role: "DevOps Engineer at WinzTech",
+            name: "David",
+            role: "DevOps Engineer at Aucess",
             image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
-            name: "Emily Davis",
-            role: "Software Engineer at WinzTech",
+            name: "Emily",
+            role: "Software Engineer at Aucess",
             image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];

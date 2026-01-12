@@ -158,7 +158,7 @@ const Contact = () => {
                                         <h3 className="text-3xl font-bold">United States</h3>
                                         <div className="flex flex-col gap-3 text-muted-foreground text-lg">
                                             <p>123 Digital Avenue, Suite 567</p>
-                                            <p>Email: contact@yourcompany.com</p>
+                                            <p>Email: contact@aucess.com</p>
                                             <p>Phone: +1 (555) 987-6543</p>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@ const Contact = () => {
                                         <h3 className="text-3xl font-bold">Australia</h3>
                                         <div className="flex flex-col gap-3 text-muted-foreground text-lg">
                                             <p>456 Creative Street, Level 8 Sydney NSW 2000</p>
-                                            <p>Email: contact@yourcompany.com</p>
+                                            <p>Email: contact@aucess.com</p>
                                             <p>Phone: +61 (2) 9012 3456</p>
                                         </div>
                                     </div>

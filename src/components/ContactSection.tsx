@@ -10,7 +10,7 @@ const ContactSection = () => {
           <div className="flex items-center gap-2 pr-4 lg:pr-6 pl-4 lg:pl-8 py-16 md:py-24">
             <MessageSquare className="w-5 h-5 text-[#ff5757]" />
             <span className="text-[#ff5757] font-bold tracking-wide uppercase text-sm">
-              Connect With Winztech
+              Connect With Aucess
             </span>
           </div>
 

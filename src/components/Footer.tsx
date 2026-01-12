@@ -1,21 +1,22 @@
 import { Instagram, Twitter, Linkedin, Facebook, MapPin, Phone, Mail, Send, ExternalLink } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const menuLinks = [
-    { label: "Home", href: "#", active: true },
-    { label: "About Us", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Portfolio", href: "#" },
-    { label: "Blog", href: "#" },
+    { label: "Home", href: "/", active: true },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const resourceLinks = [
     { label: "Style guide", href: "#" },
     { label: "Licenses", href: "#" },
     { label: "Changelog", href: "#" },
-    { label: "404 Error", href: "#" },
+    { label: "404 Error", href: "/not-found" },
   ];
 
   const socialLinks = [
@@ -80,12 +81,12 @@ const Footer = () => {
                   <ul className="space-y-3">
                     {menuLinks.map((link) => (
                       <li key={link.label}>
-                        <a
-                          href={link.href}
+                        <Link
+                          to={link.href}
                           className={`transition-colors ${link.active ? 'text-foreground font-medium' : 'text-muted-foreground hover:text-foreground'}`}
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>

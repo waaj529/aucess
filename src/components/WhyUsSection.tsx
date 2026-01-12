@@ -89,7 +89,7 @@ const WhyUsSection = () => {
 
             {/* Description */}
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-12">
-              At WinzTech, our work is all about results. We approach each project with a deep understanding of our clients' needs, ensuring every solution is crafted to deliver value.
+              At Aucess, our work is all about results. We approach each project with a deep understanding of our clients' needs, ensuring every solution is crafted to deliver value.
             </p>
 
             {/* Two Column Grid for Reasons and Image */}

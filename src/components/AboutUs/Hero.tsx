@@ -40,14 +40,10 @@ const Hero = () => {
                             Experiences That Inspire
                         </h1>
                         <p className="text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
-                            At WinzTech, we merge creativity with strategy to build solutions that inspire,
+                            At Aucess, we merge creativity with strategy to build solutions that inspire,
                             engage, and convert. We are a full-service digital agency with a passion for
                             innovation and a track record of delivering exceptional results.
                         </p>
-                        {/* Note: User image allows "WinzTech", I should probably use "Aucess" based on previous context, 
-                but user said "just like above image". I will stick to the text in image but should I change brand name?
-                The previous tasks changed "WinzTech" to "Aucess". I will use "Aucess" to be consistent with the project name.
-            */}
 
                         <Button className="w-fit bg-black text-white hover:bg-gray-800 rounded-none px-8 py-6 text-base">
                             Explore Our Services

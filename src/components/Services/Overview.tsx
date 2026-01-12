@@ -10,7 +10,7 @@ const Overview = () => {
                     <div className="pt-20 pb-20 pl-4 lg:pl-8 pr-4 lg:pr-8">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">Overview Of Services</h2>
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            At WinzTech, we offer a full spectrum of digital services designed to elevate your brand and drive meaningful
+                            At Aucess, we offer a full spectrum of digital services designed to elevate your brand and drive meaningful
                             results. Whether you're looking to launch a stunning website, build a strong brand identity, improve your online
                             visibility, or develop a custom app, our team is equipped with the expertise to help you succeed. We combine
                             cutting-edge design, strategic thinking, and innovative technology to create seamless, user-centric solutions

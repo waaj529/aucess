@@ -27,11 +27,11 @@ const Hero = () => {
                     <div className="pt-32 pb-20 pl-4 lg:pl-8 pr-4 lg:pr-8 flex flex-col justify-center">
                         <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-8">
                             Shape The Future Of Your <br />
-                            Brand With WinzTech
+                            Brand With Aucess
                         </h1>
                         <p className="text-lg text-muted-foreground mb-10 max-w-2xl leading-relaxed">
                             From stunning websites and captivating branding to powerful SEO, marketing strategies, and
-                            custom app development, WinzTech helps businesses thrive online.
+                            custom app development, Aucess helps businesses thrive online.
                         </p>
 
                         <Button className="w-fit bg-black text-white hover:bg-gray-800 rounded-none px-8 py-6 text-base">
