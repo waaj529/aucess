@@ -27,22 +27,22 @@ const Achievements = () => {
             organization: "Digital World"
         },
         {
-            image: "https://cdn.worldvectorlogo.com/logos/upwork-roundedsquare-1.svg",
+            image: "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1696944247/logos/upwork-logo-svg.svg",
             title: "Top Rated Plus",
             organization: "Upwork"
         },
         {
-            image: "https://cdn.worldvectorlogo.com/logos/fiverr-1.svg",
+            image: "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/d85489bfe6efdc8b94cf795d3e76b39e-1646114758328/fiverr-logo-color.svg",
             title: "Level 2 Seller",
             organization: "Fiverr"
         },
         {
-            image: "https://pseb.org.pk/wp-content/uploads/2021/07/pseb-logo.png",
-            title: "Registered Company",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1200px-Flag_of_Pakistan.svg.png",
+            title: "PSEB Registered",
             organization: "Pakistan Software Export Board"
         },
         {
-            image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png",
             title: "Registered LLC",
             organization: "United States"
         }
