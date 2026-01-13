@@ -25,9 +25,7 @@ export const allImages = [
   
   // Team images
   "https://ik.imagekit.io/luod4wmv7/WhatsApp%20Image%202026-01-11%20at%2021.11.06%20(1).jpeg?updatedAt=1768232381593",
-  "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767891674/image-gen_38_y6omnz.webp",
-  "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  "https://ik.imagekit.io/luod4wmv7/image-gen%20(8).jpg",
   
   // Testimonial images
   "https://randomuser.me/api/portraits/men/1.jpg",

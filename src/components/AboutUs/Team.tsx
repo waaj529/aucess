@@ -65,17 +65,7 @@ const Team = () => {
         {
             name: "Wajid Abbas",
             role: "Founder & CTO",
-            image: "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767891674/image-gen_38_y6omnz.webp"
-        },
-        {
-            name: "David",
-            role: "DevOps Engineer at Aucess",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            name: "Emily",
-            role: "Software Engineer at Aucess",
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "https://ik.imagekit.io/luod4wmv7/image-gen%20(8).jpg"
         }
     ];
 
