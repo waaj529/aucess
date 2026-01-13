@@ -27,14 +27,24 @@ const Achievements = () => {
             organization: "Digital World"
         },
         {
-            image: "https://images.unsplash.com/photo-1533227297464-60f2a8f91f14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "User Choice 2024",
-            organization: "Community Vote"
+            image: "https://cdn.worldvectorlogo.com/logos/upwork-roundedsquare-1.svg",
+            title: "Top Rated Plus",
+            organization: "Upwork"
         },
         {
-            image: "https://images.unsplash.com/photo-1565514020125-998ac55a4358?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            title: "Excellence in Tech",
-            organization: "Innovate Summit"
+            image: "https://cdn.worldvectorlogo.com/logos/fiverr-1.svg",
+            title: "Level 2 Seller",
+            organization: "Fiverr"
+        },
+        {
+            image: "https://pseb.org.pk/wp-content/uploads/2021/07/pseb-logo.png",
+            title: "Registered Company",
+            organization: "Pakistan Software Export Board"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            title: "Registered LLC",
+            organization: "United States"
         }
     ];
 
