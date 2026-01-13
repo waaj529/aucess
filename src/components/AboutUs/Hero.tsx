@@ -23,6 +23,8 @@ const Hero = () => {
                                 <img
                                     src="/lovable-uploads/about-hero-small.png"
                                     alt="Team working"
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
                                     onError={(e) => {
                                         // Fallback if image doesn't exist

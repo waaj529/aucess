@@ -34,7 +34,7 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
         {/* Left column - Logo only */}
         <div className="w-1/2 flex items-center pl-4">
           <Link to="/" className="flex items-center">
-            <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" />
+            <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" loading="eager" decoding="sync" />
           </Link>
         </div>
 
@@ -64,7 +64,7 @@ const Navbar = ({ isScrolled = false }: NavbarProps) => {
       <div className="lg:hidden mx-6 md:mx-12 border-b border-l border-r border-border">
         <nav className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
-            <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" />
+            <img src="/Aucess.svg" alt="Aucess" className="h-12 w-auto" loading="eager" decoding="sync" />
           </Link>
           <button
             className="p-2 text-foreground"

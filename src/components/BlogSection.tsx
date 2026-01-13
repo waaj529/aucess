@@ -17,6 +17,8 @@ const BlogPost = ({ image, category, date, readTime, title, description }: BlogP
         <img
           src={image}
           alt={title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-48 md:h-full object-cover transition-transform duration-500 hover:scale-105"
         />
       </div>

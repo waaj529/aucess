@@ -19,11 +19,16 @@ const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 }}
                 className="mb-6 rounded-sm overflow-hidden"
             >
-                <div
+                <img
+                    src={image}
+                    alt={name}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                         width: '100%',
                         height: '100%',
-                        background: `url(${image}) lightgray 50% 50% / cover no-repeat`
+                        objectFit: 'cover',
+                        objectPosition: '50% 50%'
                     }}
                     className="transition-transform duration-500 group-hover:scale-110"
                 />
@@ -55,7 +60,7 @@ const Team = () => {
         {
             name: "Zain Israr",
             role: "Founder & CEO",
-            image: "https://ik.imagekit.io/luod4wmv7/WhatsApp%20Image%202026-01-11%20at%2021.11.06%20(1).jpeg"
+            image: "https://ik.imagekit.io/luod4wmv7/WhatsApp%20Image%202026-01-11%20at%2021.11.06%20(1).jpeg?updatedAt=1768232381593"
         },
         {
             name: "Wajid Abbas",
