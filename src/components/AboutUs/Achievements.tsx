@@ -27,22 +27,22 @@ const Achievements = () => {
             organization: "Digital World"
         },
         {
-            image: "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1696944247/logos/upwork-logo-svg.svg",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
             title: "Top Rated Plus",
             organization: "Upwork"
         },
         {
-            image: "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto/v1/attachments/generic_asset/asset/d85489bfe6efdc8b94cf795d3e76b39e-1646114758328/fiverr-logo-color.svg",
+            image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
             title: "Level 2 Seller",
             organization: "Fiverr"
         },
         {
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/1200px-Flag_of_Pakistan.svg.png",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
             title: "PSEB Registered",
             organization: "Pakistan Software Export Board"
         },
         {
-            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png",
+            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
             title: "Registered LLC",
             organization: "United States"
         }
