@@ -13,17 +13,17 @@ const Footer = () => {
   ];
 
   const resourceLinks = [
-    { label: "Style guide", href: "#" },
-    { label: "Licenses", href: "#" },
-    { label: "Changelog", href: "#" },
+    { label: "Style guide", href: "/services" },
+    { label: "Licenses", href: "/about" },
+    { label: "Changelog", href: "/portfolio" },
     { label: "404 Error", href: "/not-found" },
   ];
 
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Facebook, href: "#", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/aucess", label: "Instagram" },
+    { icon: Twitter, href: "https://twitter.com/Aucess", label: "Twitter" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/aucess", label: "LinkedIn" },
+    { icon: Facebook, href: "https://www.facebook.com/aucess", label: "Facebook" },
   ];
 
   return (
@@ -136,7 +136,7 @@ const Footer = () => {
 
             {/* Company Deck Badge */}
             <a
-              href="#"
+              href="/contact"
               className="absolute right-[15%] md:right-[18%] lg:right-[22%] top-1/2 -translate-y-1/2 bg-[#ff5757] text-white py-3 px-6 -rotate-[30deg] flex items-center gap-2 text-sm font-medium hover:opacity-90 transition-opacity shadow-lg"
             >
               Company Deck

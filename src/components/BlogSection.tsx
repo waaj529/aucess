@@ -47,7 +47,7 @@ const BlogPost = ({ image, category, date, readTime, title, description }: BlogP
 
         {/* Read More */}
         <a
-          href="#"
+          href="/contact"
           className="text-foreground font-medium hover:text-primary transition-colors duration-200 w-fit"
         >
           Read More

@@ -45,9 +45,9 @@ const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                     </div>
                     <div className="flex items-center gap-3 text-muted-foreground mt-1">
                         {/* Icons from original code */}
-                        <a href="#" className="hover:text-[#FF5757] transition-colors"><Facebook className="w-4 h-4" /></a>
-                        <a href="#" className="hover:text-[#FF5757] transition-colors"><Linkedin className="w-4 h-4" /></a>
-                        <a href="#" className="hover:text-[#FF5757] transition-colors"><Instagram className="w-4 h-4" /></a>
+                        <a href="https://www.facebook.com/aucess" className="hover:text-[#FF5757] transition-colors" target="_blank" rel="noopener noreferrer"><Facebook className="w-4 h-4" /></a>
+                        <a href="https://www.linkedin.com/company/aucess" className="hover:text-[#FF5757] transition-colors" target="_blank" rel="noopener noreferrer"><Linkedin className="w-4 h-4" /></a>
+                        <a href="https://www.instagram.com/aucess" className="hover:text-[#FF5757] transition-colors" target="_blank" rel="noopener noreferrer"><Instagram className="w-4 h-4" /></a>
                     </div>
                 </div>
             </div>

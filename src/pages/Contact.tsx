@@ -125,7 +125,7 @@ const Contact = () => {
                                         </Button>
 
                                         <p className="text-muted-foreground">
-                                            Not interested to submit the form? <a href="#" className="text-foreground font-semibold hover:underline">book a call</a>
+                                            Not interested to submit the form? <a href="mailto:contact@aucess.com" className="text-foreground font-semibold hover:underline">book a call</a>
                                         </p>
                                     </div>
 
