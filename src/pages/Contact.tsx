@@ -12,8 +12,54 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        service: "",
+        budget: "",
+        project: ""
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState("");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitMessage("");
+
+        // Simulate form submission
+        try {
+            // In a real application, you would send this to your backend
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            setSubmitMessage("Thank you! Your message has been sent successfully. We'll get back to you soon.");
+            
+            // Reset form
+            setFormData({
+                name: "",
+                email: "",
+                company: "",
+                phone: "",
+                service: "",
+                budget: "",
+                project: ""
+            });
+        } catch (error) {
+            setSubmitMessage("Sorry, there was an error sending your message. Please try again or contact us directly at contact@aucess.com");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    const handleChange = (field: string, value: string) => {
+        setFormData(prev => ({ ...prev, [field]: value }));
+    };
+
     return (
         <div className="min-h-screen bg-background font-sans text-foreground relative">
             <VerticalDividers />
@@ -50,11 +96,14 @@ const Contact = () => {
                                     Reach out to us through the form below, and we'll respond as soon as possible. Let's start creating something great together!
                                 </p>
 
-                                <form className="w-full max-w-4xl space-y-12">
+                                <form onSubmit={handleSubmit} className="w-full max-w-4xl space-y-12">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                         <div className="space-y-2">
                                             <Input
                                                 placeholder="Name"
+                                                value={formData.name}
+                                                onChange={(e) => handleChange("name", e.target.value)}
+                                                required
                                                 className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus-visible:ring-0 focus-visible:border-foreground bg-transparent placeholder:text-muted-foreground/70"
                                             />
                                         </div>
@@ -62,6 +111,9 @@ const Contact = () => {
                                             <Input
                                                 placeholder="Email"
                                                 type="email"
+                                                value={formData.email}
+                                                onChange={(e) => handleChange("email", e.target.value)}
+                                                required
                                                 className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus-visible:ring-0 focus-visible:border-foreground bg-transparent placeholder:text-muted-foreground/70"
                                             />
                                         </div>
@@ -71,6 +123,8 @@ const Contact = () => {
                                         <div className="space-y-2">
                                             <Input
                                                 placeholder="Company Name"
+                                                value={formData.company}
+                                                onChange={(e) => handleChange("company", e.target.value)}
                                                 className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus-visible:ring-0 focus-visible:border-foreground bg-transparent placeholder:text-muted-foreground/70"
                                             />
                                         </div>
@@ -78,6 +132,8 @@ const Contact = () => {
                                             <Input
                                                 placeholder="Phone"
                                                 type="tel"
+                                                value={formData.phone}
+                                                onChange={(e) => handleChange("phone", e.target.value)}
                                                 className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus-visible:ring-0 focus-visible:border-foreground bg-transparent placeholder:text-muted-foreground/70"
                                             />
                                         </div>
@@ -85,7 +141,7 @@ const Contact = () => {
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                         <div className="space-y-2">
-                                            <Select>
+                                            <Select value={formData.service} onValueChange={(value) => handleChange("service", value)}>
                                                 <SelectTrigger className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus:ring-0 shadow-none bg-transparent text-muted-foreground/70 w-full text-left font-normal">
                                                     <SelectValue placeholder="Select A Service" />
                                                 </SelectTrigger>
@@ -98,7 +154,7 @@ const Contact = () => {
                                             </Select>
                                         </div>
                                         <div className="space-y-2">
-                                            <Select>
+                                            <Select value={formData.budget} onValueChange={(value) => handleChange("budget", value)}>
                                                 <SelectTrigger className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus:ring-0 shadow-none bg-transparent text-muted-foreground/70 w-full text-left font-normal">
                                                     <SelectValue placeholder="Budget" />
                                                 </SelectTrigger>
@@ -115,14 +171,26 @@ const Contact = () => {
                                     <div className="space-y-2">
                                         <Input
                                             placeholder="About Project"
+                                            value={formData.project}
+                                            onChange={(e) => handleChange("project", e.target.value)}
                                             className="border-0 border-b border-border rounded-none px-0 py-2 text-lg focus-visible:ring-0 focus-visible:border-foreground bg-transparent placeholder:text-muted-foreground/70"
                                         />
                                     </div>
 
                                     <div className="pt-4 flex flex-col items-start gap-8">
-                                        <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm px-8 py-6 text-base font-medium">
-                                            Send Message
+                                        <Button 
+                                            type="submit" 
+                                            disabled={isSubmitting}
+                                            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-sm px-8 py-6 text-base font-medium disabled:opacity-50"
+                                        >
+                                            {isSubmitting ? "Sending..." : "Send Message"}
                                         </Button>
+
+                                        {submitMessage && (
+                                            <p className={`text-sm ${submitMessage.includes("error") || submitMessage.includes("Sorry") ? "text-destructive" : "text-green-600"}`}>
+                                                {submitMessage}
+                                            </p>
+                                        )}
 
                                         <p className="text-muted-foreground">
                                             Not interested to submit the form? <a href="mailto:contact@aucess.com" className="text-foreground font-semibold hover:underline">book a call</a>
