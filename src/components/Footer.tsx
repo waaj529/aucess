@@ -96,12 +96,12 @@ const Footer = () => {
                   <ul className="space-y-3">
                     {resourceLinks.map((link) => (
                       <li key={link.label}>
-                        <a
-                          href={link.href}
+                        <Link
+                          to={link.href}
                           className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                           {link.label}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -115,6 +115,8 @@ const Footer = () => {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   className="w-12 h-12 border border-border rounded-lg flex items-center justify-center text-foreground hover:bg-background transition-colors"
                 >
