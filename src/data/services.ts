@@ -1,11 +1,11 @@
-// Service images from Cloudinary CDN
-const aiSoftwareImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991363/ai-software-v2_umtmkg.jpg";
-const aiAppsImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991363/ai-apps-v2_cbakoq.jpg";
-const machineLearningImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991364/machine-learning-v2_lb953j.jpg";
-const computerVisionImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991364/computer-vision-v2_nja8m2.jpg";
-const automationImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991363/automation-v2_ginml7.jpg";
-const agenticAiImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991363/ai-software-v2_umtmkg.jpg"; // Note: No specific URL provided for agentic AI, using ai-software
-const devopsImg = "https://res.cloudinary.com/dnvia0wsm/image/upload/v1767991363/devops-v2_uwk24n.jpg";
+// Service images - Professional high-quality images
+const aiSoftwareImg = "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&auto=format&fit=crop&q=80";
+const aiAppsImg = "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&fit=crop&q=80";
+const machineLearningImg = "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=800&auto=format&fit=crop&q=80";
+const computerVisionImg = "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=800&auto=format&fit=crop&q=80";
+const automationImg = "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&auto=format&fit=crop&q=80";
+const agenticAiImg = "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&auto=format&fit=crop&q=80";
+const devopsImg = "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&auto=format&fit=crop&q=80";
 
 export interface Service {
     id: string;

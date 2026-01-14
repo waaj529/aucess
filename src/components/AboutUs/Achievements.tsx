@@ -12,39 +12,49 @@ const Achievements = () => {
 
     const awards = [
         {
-            image: "https://images.unsplash.com/photo-1533227297464-60f2a8f91f14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&auto=format&fit=crop&q=80",
             title: "Best Design 2023",
             organization: "Luminous Interactive"
         },
         {
-            image: "https://images.unsplash.com/photo-1565514020125-998ac55a4358?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&auto=format&fit=crop&q=80",
             title: "Innovation Award",
             organization: "Tech Giants"
         },
         {
-            image: "https://images.unsplash.com/photo-1622675363311-3e1904c4d488?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&auto=format&fit=crop&q=80",
             title: "Agency of the Year",
             organization: "Digital World"
         },
         {
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&auto=format&fit=crop&q=80",
             title: "Top Rated Plus",
             organization: "Upwork"
         },
         {
-            image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&auto=format&fit=crop&q=80",
             title: "Level 2 Seller",
             organization: "Fiverr"
         },
         {
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80",
             title: "PSEB Registered",
             organization: "Pakistan Software Export Board"
         },
         {
-            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80",
             title: "Registered LLC",
             organization: "United States"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&fit=crop&q=80",
+            title: "Excellence in AI",
+            organization: "Tech Innovation Summit"
+        },
+        {
+            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80",
+            title: "Best Startup 2024",
+            organization: "Business Excellence Awards"
         }
     ];
 
