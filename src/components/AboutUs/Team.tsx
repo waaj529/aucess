@@ -60,7 +60,7 @@ const Team = () => {
         {
             name: "Zain Israr",
             role: "Founder & CEO",
-            image: "/ceo-zain.png"
+            image: "https://ik.imagekit.io/luod4wmv7/PHOTO-2026-01-14-20-51-25.jpg"
         },
         {
             name: "Wajid Abbas",
