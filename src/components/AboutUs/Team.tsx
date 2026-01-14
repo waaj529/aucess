@@ -9,12 +9,12 @@ interface TeamMemberProps {
 const TeamMember = ({ image, name, role }: TeamMemberProps) => {
     return (
         <div
-            style={{ width: '403.91px', height: '436.41px', background: '#FFF' }}
+            style={{ width: '100%', maxWidth: '403.91px', background: '#FFF' }}
             className="flex flex-col items-center justify-center p-6 shadow-sm hover:shadow-md transition-shadow duration-300 group"
         >
             <div
                 style={{
-                    width: '355.91px',
+                    width: '100%',
                     height: '312.41px',
                 }}
                 className="mb-6 rounded-sm overflow-hidden"
@@ -27,8 +27,8 @@ const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                     style={{
                         width: '100%',
                         height: '100%',
-                        objectFit: 'contain',
-                        objectPosition: 'center'
+                        objectFit: 'cover',
+                        objectPosition: '50% 50%'
                     }}
                     className="transition-transform duration-500 group-hover:scale-110"
                 />
@@ -37,7 +37,7 @@ const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                 Image 1 shows text left aligned relative to the image? 
                 Actually image 1 shows text aligns with the left edge of the image.
             */}
-            <div className="w-[355.91px]">
+            <div className="w-full">
                 <div className="flex justify-between items-start">
                     <div>
                         <h3 className="text-2xl font-bold mb-1 text-black">{name}</h3>
@@ -74,7 +74,7 @@ const Team = () => {
             <div className="mx-6 md:mx-12">
                 <div className="grid grid-cols-1 lg:grid-cols-[30%_70%]">
                     {/* Left Column */}
-                    <div className="pt-20 pb-20 pr-4 lg:pr-6 pl-4 lg:pl-8 border-r border-border">
+                    <div className="pt-20 pb-20 pr-4 lg:pr-6 pl-4 lg:pl-8 border-r border-border min-h-[600px] relative">
                         <div className="sticky top-32">
                             <div className="flex items-center gap-4">
                                 <Users className="text-[#FF5757] w-5 h-5" />
