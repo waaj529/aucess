@@ -4,9 +4,10 @@ interface TeamMemberProps {
     image: string;
     name: string;
     role: string;
+    imagePosition?: string;
 }
 
-const TeamMember = ({ image, name, role }: TeamMemberProps) => {
+const TeamMember = ({ image, name, role, imagePosition = '50% 50%' }: TeamMemberProps) => {
     return (
         <div
             style={{ width: '100%', maxWidth: '403.91px', background: '#FFF' }}
@@ -28,7 +29,7 @@ const TeamMember = ({ image, name, role }: TeamMemberProps) => {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        objectPosition: '50% 50%'
+                        objectPosition: imagePosition
                     }}
                     className="transition-transform duration-500 group-hover:scale-110"
                 />
@@ -60,7 +61,8 @@ const Team = () => {
         {
             name: "Zain Israr",
             role: "Founder & CEO",
-            image: "https://ik.imagekit.io/luod4wmv7/PHOTO-2026-01-14-20-51-25.jpg"
+            image: "https://ik.imagekit.io/luod4wmv7/PHOTO-2026-01-14-20-51-25.jpg",
+            imagePosition: "50% 15%"
         },
         {
             name: "Wajid Abbas",
